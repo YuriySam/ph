@@ -1,0 +1,82 @@
+<?php
+/*
+		Модель обычно включает методы выборки данных, это могут быть:
+			> методы нативных библиотек pgsql или mysql;
+			> методы библиотек, реализующих абстракицю данных. Например, методы библиотеки PEAR MDB2;
+			> методы ORM;
+			> методы для работы с NoSQL;
+			> и др.
+	*/
+
+class Model_Phone_Sidebar extends Model
+{
+	
+	
+	public function get_data()
+	{	
+		
+		// Здесь просто реальные данные.
+		
+		return array(
+			
+			array(
+				'namefile' => 'Іменинники',
+				'name' => 'http://DunkelBeer.ru',
+				'Description' => 'Знайти в кого сьогодні, чи найближчі 10 днів день народження.'
+				'level' => '1'
+			),
+
+			array(
+				'Year' => 'Подивитись повідомлення',
+				'Site' => 'http://ZopoMobile.ru',
+				'Description' => 'Дивимось повідомлення для Адміністратора.'
+				'level' => '1'
+			),
+
+			array(
+				'Year' => 'Користувачі',
+				'Site' => 'http://GeekWear.ru',
+				'Description' => 'Робота з користувачами додатку.'
+				'level' => '1'
+			),
+
+			array(
+				'Year' => 'Пошук	',
+				'Site' => 'http://РоналВарвар.рф',
+				'Description' => 'Шукати в будь-якому полі Довідника.'
+				'level' => '3'
+			),
+
+			array(
+				'Year' => 'Оновити запис',
+				'Site' => 'http://TompsonTatoo.ru',
+				'Description' => 'Змінити запис довідника.'
+				'level' => '2'
+			),
+
+			array(
+				'Year' => 'Оновити цитати',
+				'Site' => 'http://DaftState.ru',
+				'Description' => 'Оновити, додати, вилалити цитати.'
+				'level' => '2'
+			),
+
+			array(
+				'Year' => 'Завантажити файли',
+				'Site' => 'http://TiltPeople.ru',
+				'Description' => 'Операції імпорту-експорту даних.'
+				'level' => '2'
+			),
+
+			array(
+				'Year' => 'Допомога',
+				'Site' => 'http://AbsurdGames.ru',
+				'Description' => 'Інструкція по роботі та запит Адміністратору.'
+				'level' => '3'
+			),
+
+		);
+		
+	}
+
+}

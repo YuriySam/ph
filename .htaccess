@@ -1,0 +1,12 @@
+﻿# Это запретит доступ к файлу .htaccess в случае дурно настроенного хостинга.
+RewriteRule .htaccess - [F]  
+
+# показывать ошибки
+RewriteEngine On
+
+#следующее за этими 2-мя директивами будет касаться только виртуальных URL для которых нет папки или файла на диске сервера.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# перенаправим обработку всех страниц на index.php
+RewriteRule .* index.php [L]
