@@ -1,6 +1,7 @@
 <?php
 /*
-Controller_Login в котором генерируется вид с формой для ввода логина и пароля, после заполнения которой производится процедура аутентификации и в случае успеха пользователь перенаправляется в админку.
+Controller_Login в котором генерируется вид с формой для ввода логина и пароля, 
+после заполнения которой производится процедура аутентификации и в случае успеха пользователь перенаправляется в админку.
 */
 
 class Controller_Login extends Controller
@@ -24,7 +25,8 @@ class Controller_Login extends Controller
 			{
 				$data["login_status"] = "access_granted";
 				
-				session_start(); echo $_SESSION['admin'];
+				session_start(); 
+				echo $_SESSION['admin'];
 				$_SESSION['admin'] = $password;
 				header('Location:/admin/');
 			}

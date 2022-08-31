@@ -2,7 +2,7 @@
 /*bootstrap.php*/
 session_start();
 $f="<BR> bootstrap.php";
-//echo $f;
+echo $f;
 // подключаем файлы ядра
 require_once 'core/model.php';
 require_once 'core/view.php';

@@ -1,4 +1,9 @@
 <?php
+/*
+model.php
+*/
+//$f="model.php"
+//echo "<BR>".$f;
 
 class Model
 {
@@ -18,3 +23,4 @@ class Model
 		// todo
 	}
 }
+

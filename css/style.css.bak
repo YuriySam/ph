@@ -7,8 +7,6 @@ Name       : Accumen
 Description: A two-column, fixed-width design with dark color scheme.
 Version    : 1.0
 Released   : 20120712
-Modyficated by YSA
-
 */
 
 * {
@@ -277,7 +275,7 @@ a {
 #wrapper {
 	width: 978px;
 	position: relative;
-	background: #FFF;
+	background: #FF0;
 	margin: 0 auto 0 auto;
 	box-shadow: 10px 100px 150px 0px rgba(0,0,0,0.15);
 	border: solid 1px #f3f3f3;

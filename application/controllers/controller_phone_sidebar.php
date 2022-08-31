@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Phone extends Controller
+class Controller_Phone_sidebar extends Controller
 {
 
 	function __construct()
@@ -11,6 +11,7 @@ class Controller_Phone extends Controller
 	
 	function action_index()
 	{
+		echo"Controller_Phone_sidebar";
 		$data = $this->model->get_data();		
 		$this->view->generate('phone_view.php', 'template_view.php', $data, $data_sidebar);
 	}

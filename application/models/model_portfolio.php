@@ -12,50 +12,50 @@ class Model_Portfolio extends Model
 			
 			array(
 				'Year' => '2012',
-				'Site' => 'http://DunkelBeer.ru',
-				'Description' => 'Промо-сайт темного пива Dunkel от немецкого производителя Löwenbraü выпускаемого в России пивоваренной компанией "CАН ИнБев".'
+				'Site' => 'http://DunkelBeer.ua',
+				'Description' => 'Промо-сайт темного пива Dunkel от немецкого производителя Löwenbraü".'
 			),
 
 			array(
 				'Year' => '2012',
-				'Site' => 'http://ZopoMobile.ru',
+				'Site' => 'http://ZopoMobile.ua',
 				'Description' => 'Русскоязычный каталог китайских телефонов компании Zopo на базе Android OS и аксессуаров к ним.'
 			),
 
 			array(
 				'Year' => '2012',
-				'Site' => 'http://GeekWear.ru',
+				'Site' => 'http://GeekWear.ua',
 				'Description' => 'Интернет-магазин брендовой одежды для гиков.'
 			),
 
 			array(
 				'Year' => '2011',
-				'Site' => 'http://РоналВарвар.рф',
-				'Description' => 'Промо-сайт мультфильма "Ронал-варвар" от норвежских режиссеров. Мультфильм о самом нетипичном варваре на Земле, переполненный интересными приключениями и забавными ситуациями.'
+				'Site' => 'http://РоналВарвар.ua',
+				'Description' => 'Промо-сайт мультфильма "Ронал-варвар" от норвежских режиссеров. '
 			),
 
 			array(
 				'Year' => '2011',
-				'Site' => 'http://TompsonTatoo.ru',
-				'Description' => 'Персональный сайт-блог художника-татуировщика Алексея Томпсона из Санкт-Петербурга.'
+				'Site' => 'http://TompsonTatoo.ua',
+				'Description' => 'Персональный сайт-блог художника-татуировщика Алексея Томпсона из Бучи.'
 			),
 
 			array(
 				'Year' => '2011',
-				'Site' => 'http://DaftState.ru',
+				'Site' => 'http://DaftState.ua',
 				'Description' => 'Страничка музыкальных и сануд продюсеров из команды "DaftState", работающих в стилях BreakBeat и BigBeat.'
 			),
 
 			array(
 				'Year' => '2011',
-				'Site' => 'http://TiltPeople.ru',
+				'Site' => 'http://TiltPeople.ua',
 				'Description' => 'Сайт сообщества фотографов в стиле Tilt Shif.'
 			),
 
 			array(
 				'Year' => '2011',
-				'Site' => 'http://AbsurdGames.ru',
-				'Description' => 'Страничка российской команды разработчиков независимых игр с необычной физикой и сюрреалистической графикой.'
+				'Site' => 'http://AbsurdGames.ua',
+				'Description' => 'Страничка  команды разработчиков независимых игр с необычной физикой и сюрреалистической графикой.'
 			),
 
 		);

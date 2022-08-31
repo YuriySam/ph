@@ -9,8 +9,17 @@ class View
 	$content_file - виды отображающие контент страниц;
 	$template_file - общий для всех страниц шаблон;
 	$data - массив, содержащий элементы контента страницы. Обычно заполняется в модели.
+	$data_sidebar - массив, що містить пункти меню сайдбару. Зазвичай заповнюється в моделі.
 	*/
-	function generate($content_view, $template_view, $data = null, $data_sidebar = null)
+	function generate($content_view, 
+					$template_view, 
+					$data = null, 
+					$data_sidebar = null, 
+					$content_sidebar=null,
+					$data_menu = null, 
+					$content_menu=null
+					
+					)
 	{
 		
 		/*
@@ -26,6 +35,13 @@ class View
 		внутри которого будет встраиваться вид
 		для отображения контента конкретной страницы.
 		*/
+		//echo"<BR>";
+		//echo"31 view";
+		//echo"31 view";
+		
+		//print_r($data_sidebar);
+		//print_r($data);
+		
 		include 'application/views/'.$template_view;
 	}
 }

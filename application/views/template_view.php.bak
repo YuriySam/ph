@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
 Design by Free CSS Templates
@@ -9,93 +10,126 @@ Description: A two-column, fixed-width design with dark color scheme.
 Version    : 1.0
 Released   : 20120712
 
-Modified by VitalySwipe
+Modified by VitalySwipe and YSA
 -->
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<title>ОЛОЛОША TEAM</title>
+		<title>Помогатор</title>
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 		<link href="http://fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" type="text/css" href="/css/style.css" />
-		<script src="/js/jquery-1.6.2.js" type="text/javascript"></script>
-		<script type="text/javascript">
-		// return a random integer between 0 and number
-		function random(number) {
-			
-			return Math.floor( Math.random()*(number+1) );
-		};
+		<?php
+		if (!isset($_SESSION['location'])) {
+			?>
+			<link rel="stylesheet" type="text/css" href="/css/style.css" />
+			<script src="/js/jquery-1.6.2.js" type="text/javascript"></script>
+			<?php
+				} else{
+					$h_r_e_f=$_SESSION['location']."css/style.css";
+					$S_r_c=$_SESSION['location']."css/style.css";
+					//echo "<BR>  _SESSION['location']=".$_SESSION['location'];
+				?>	
+					<link rel="stylesheet" type="text/css" href="<?PHP echo$_SESSION['location']?>css/style.css" />
+					<script src="<?PHP echo $_SESSION['location']?>js/jquery-1.6.2.js" type="text/javascript"></script>
+				<?php
+					
+				}
+		?>
+		<!--<link rel="stylesheet" type="text/css" href="/css/style.css" />-->
 		
-		// show random quote
-		$(document).ready(function() { 
-
-			var quotes = $('.quote');
-			quotes.hide();
+		
+		
+		<script type="text/javascript">
+			// return a random integer between 0 and number
+			function random(number) {
+				
+				return Math.floor( Math.random()*(number+1) );
+			};
 			
-			var qlen = quotes.length; //document.write( random(qlen-1) );
-			$( '.quote:eq(' + random(qlen-1) + ')' ).show(); //tag:eq(1)
-		});
+			// show random quote
+			$(document).ready(function() { 
+
+				var quotes = $('.quote');
+				quotes.hide();
+				
+				var qlen = quotes.length; //document.write( random(qlen-1) );
+				$( '.quote:eq(' + random(qlen-1) + ')' ).show(); //tag:eq(1)
+			});
 		</script>
 	</head>
 	<body>
 		<div id="wrapper">
 			<div id="header">
 				<div id="logo">
-					<a href="/">Центр</span> <span class="cms">Центр</span></a>
+					<a href="/">Помічничок<span class="cms"></span></a>
 				</div>
+				
 				<div id="menu">
 					<ul>
-						<li class="first active"><a href="/">Главная</a></li>
-						<!-- <li><a href="/services">Услуги</a></li> -->
-						<!-- <li><a href="/portfolio">Портфолио</a></li> -->
-						<li><a href="/phone">Телефоний довідник</a></li>
-						<li class="last"><a href="/contacts">Контакты</a></li>
+						<!--додамо контекстно-залежние меню-->
+						<?php	if($content_menu)include 'application/views/'.$content_menu; 
+						echo $content_menu;
+						?>
+					
+						<!--<li class="first active"><a href="/">Головна</a></li>
+						<!-- <li><a href="/services">Услуги</a></li> 
+						<!-- <li><a href="/portfolio">Портфолио</a></li> 
+						<li><a href="/phone">Телефонний довідник</a></li>
+						<li class="last"><a href="/contacts">Розвозка</a></li>
+						<li class="last"><a href="/contacts">МапаМапа</a></li>-->
 					</ul>
 					<br class="clearfix" />
 				</div>
+				
+				
 			</div>
 			<div id="page">
 				<div id="sidebar">
-				<div class="side-box">
-						<h3>Основное меню</h3>
-						<ul class="list">
-<!--додамо контекстно-залежний сайдбар-->
-							<li class="first "><a href="/">Главная</a></li>
-							<li> <a href="/services">Услуги</a></li>
-							<li> <a href="/portfolio">Портфолио</a></li>
-							<li class="last"><a href="/contacts">Контакты</a></li>
-							
-							<?php include 'application/views/'.$sidebar_view; ?>
-						</ul>
+					<div class="side-box">
+						<a id="register" class="button purple" href="/login">
+							  <i class="fa fa-user-plus"></i>
+							  <span>Вхід</span>
+						</a>
+						
 					</div>
 					<div class="side-box">
-						<h3>Случайная цитата</h3>
+						<!--додамо контекстно-залежний сайдбар-->
+						<?php	if($content_sidebar)include 'application/views/'.$content_sidebar; 
+						echo $content_sidebar;
+						?>
+					</div>
+					<div class="side-box">
+						<h3>Випадкова цитата</h3>
 						<p align="justify" class="quote">
-						«Сайт, как живой организм, изменяется и развивается.
-						Нельзя сразу написать идеальный вариант и на этом откланяться - это утопия»
+						«Сайт, як живий організм, змінюється та розвивається.
+						Не можна відразу написати ідеальний варіант і на цьому відкланятися – це утопія»
 						</p>
 						<p align="justify" class="quote"><!-- &copy; Vitaly Swipe -->
-						«Все должно быть очень просто, как текстовый файл и при этом функционально
-						и тогда пользователи от нас уйдут»
+						«Все має бути дуже просто, як текстовий файл і при цьому функціонально
+						і тоді користувачі від нас підуть»
 						</p>
 						<p align="justify" class="quote">
-						«Критика - это когда критик объясняет автору, как сделал бы он, если бы умел»
+						«Критика – це коли критик пояснює автору, як зробив би він, якби вмів»
 						</p>
 						<p align="justify" class="quote"><!-- &copy; Vitaly Swipe -->
-						«Сумасшедшим становиться тот, кто попытался разобраться в этом сумасшедшем мире»
+						«Божевільним ставати той, хто спробував розібратися в цьому божевільному світі»
 						</p>
 						<p align="justify" class="quote">
-						«Опытный разработчик знает, какой выбор ведет к поставленной цели, в то время как
-						новичок каждый раз делает шаг в неизвестность»
+						«Досвідчений розробник знає, який вибір веде до поставленої мети, тоді як
+						новачок щоразу робить крок у невідомість»
 						</p>
 					</div>
 					
 				</div>
 				<div id="content">
 					<div class="box">
-						<?php include 'application/views/'.$content_view; ?>
+						<!--Prodaction palete-->
+						<?php include 'application/views/'.$content_view; 
+							echo $content_view;
+						?>
 						<!--
 						<h2>Welcome to Accumen</h2>
 						<img class="alignleft" src="images/pic01.jpg" width="200" height="180" alt="" />
@@ -110,43 +144,40 @@ Modified by VitalySwipe
 			</div>
 			<div id="page-bottom">
 				<div id="page-bottom-sidebar">
-					<h3>Наши контакты</h3>
+					<h3>Наші контакти</h3>
 					<ul class="list">
-						<li class="first">icq: 199199538</li>
-						<li>skypeid: vitalyswipe</li>
-						<li class="last">email: vitalyswipe@gmail.com</li>
+						<!--<li class="first">icq: 199199538</li>
+						<li>skypeid: vitalyswipe</li>-->
+						<li class="last">email: y16@ukr.net</li>
 					</ul>
 				</div>
 				<div id="page-bottom-content">
-					<h3>О Компании</h3>
+					<h3>Про компанію</h3>
 					<p>
-Вот дом.
-Который построил Джек.
+На вербі зростала гілка,
+В гілці тій жила сопілка,
+А в сопілці — гарна пісня,
+Пісні тій було там тісно,
+В пісеньці — слова чудові,
+Ті, що є у рідній мові.
+<BR>
+Та ніхто не зрізав гілку,
+Не зробив собі сопілку,
+Не заграв ту гарну пісню,
+Ту, якій в сопілці тісно.
+І мовчать слова чудові,
+Ті, що є у рідній мові.
 
-А это пшеница.
-Которая в тёмном чулане хранится
-В доме,
-Который построил Джек.
+...
 
-А это весёлая птица-синица,
-Которая ловко ворует пшеницу,
-Которая в тёмном чулане хранится
-В доме,
-Который построил Джек.
-
-Вот кот,
-Который пугает и ловит синицу,
-Которая ловко ворует пшеницу,
-Которая в тёмном чулане хранится
-В доме,
-Который построил Джек.
+(Віра Правоторова)
 					</p>
 				</div>
 				<br class="clearfix" />
 			</div>
 		</div>
 		<div id="footer">
-			<a href="/">ОЛОЛОША TEAM</a> &copy; 2012</a>
+			<a href="/">Помічничок</a> &copy; 2022</a>
 		</div>
 	</body>
 </html>
